@@ -9,7 +9,11 @@ import { HomeComponent } from './home/containers/home/home.component';
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'home', component: HomeComponent },
+  { path: 'event', 
+    loadChildren: () => import('./event/event.module').then(x => x.EventModule)
+  }
 ];
+
 @NgModule({
   declarations: [
     AppComponent,
