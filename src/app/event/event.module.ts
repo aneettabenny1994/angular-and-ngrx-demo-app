@@ -4,11 +4,13 @@ import { RouterModule } from '@angular/router';
 import { EventComponent } from './containers/event/event.component';
 import { AddAttendeeComponent } from './components/add-attendee/add-attendee.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { EventListComponent } from './components/event-list/event-list.component';
 
 @NgModule({
   declarations: [
     EventComponent,
-    AddAttendeeComponent
+    AddAttendeeComponent,
+    EventListComponent
   ],
   imports: [
     CommonModule,
