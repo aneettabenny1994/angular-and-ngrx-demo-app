@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { NO_ERRORS_SCHEMA } from '@angular/compiler/src/core';
 import { EventComponent } from './event.component';
 
 describe('EventComponent', () => {
@@ -7,8 +8,9 @@ describe('EventComponent', () => {
   let fixture: ComponentFixture<EventComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ EventComponent ]
+    TestBed.configureTestingModule({
+      declarations: [ EventComponent ],
+      schemas: [NO_ERRORS_SCHEMA]
     })
     .compileComponents();
   });

@@ -98,10 +98,15 @@
               "src/favicon.ico",
               "src/assets"
             ],
+            "codeCoverageExclude": [
+              "src/assets/**/*",
+              "src/styles/*"
+            ],
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "codeCoverage": true
           }
         }
       }
