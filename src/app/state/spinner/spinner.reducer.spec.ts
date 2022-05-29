@@ -1,3 +1,4 @@
+import { StartSpinner } from './spinner.actions';
 import { reducer } from './spinner.reducer';
 
 describe('Reducer: Spinner', () => {
@@ -8,9 +9,9 @@ describe('Reducer: Spinner', () => {
   });
 
   it('should have a isOn set to true', () => {
-    const state = { isOn: false };
-    const action = { type: 'startSpinner' };
+    const initialState = { isOn: false };
+    const action = new StartSpinner();
     const expected = { isOn: true };
-    expect(reducer(state, action)).toEqual(expected);
+    expect(reducer(initialState, action)).toEqual(expected);
   });
 });
