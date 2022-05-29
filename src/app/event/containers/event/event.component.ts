@@ -5,6 +5,7 @@ import { Observable, of } from 'rxjs';
 import { Store, select } from '@ngrx/store';
 import { State } from 'src/app/state/state';
 import { StartSpinner, StopSpinner } from '../../../state/spinner/spinner.actions';
+import { getSpinner } from '../../../state/spinner/spinner.selectors';
 
 @Component({
   selector: 'app-event',
@@ -19,7 +20,7 @@ export class EventComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAttendees();
-    this.spinner$ = this.store.pipe(select(state => state.spinner.isOn));
+    this.spinner$ = this.store.pipe(select(getSpinner));
   }
 
   getAttendees() {
