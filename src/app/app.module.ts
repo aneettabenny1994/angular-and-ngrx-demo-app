@@ -11,6 +11,7 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './app.db';
 import { reducer } from './state/spinner/spinner.reducer';
 
+
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'home', component: HomeComponent },
@@ -30,7 +31,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { delay: 100 }),
-    StoreModule.forRoot({ spinner: reducer }),
+    StoreModule.forRoot(reducer),
   ],
   providers: [],
   bootstrap: [AppComponent]
