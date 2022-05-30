@@ -13,12 +13,12 @@ export class LoadAttendees implements Action {
 
 export class LoadAttendeesSuccess implements Action {
   readonly type = AttendeesActionTypes.LoadAttendeesSuccess;
-  //constructor(public payload: Attendee[]) {}
+  constructor(public payload: Attendee[]) {}
 }
 
 export class LoadAttendeesFail implements Action {
   readonly type = AttendeesActionTypes.LoadAttendeesFail;
-  //constructor(public payload: any) {}
+  constructor(public payload: any) {}
 }
 
 export type AttendeesActions =
