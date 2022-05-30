@@ -8,7 +8,8 @@ import { EventListComponent } from './components/event-list/event-list.component
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { StoreModule } from '@ngrx/store';
-import { reducers } from '../state';
+import { EffectsModule } from '@ngrx/effects';
+import { reducers, effects } from '../state';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { reducers } from '../state';
     ]),
     ReactiveFormsModule,
     HttpClientModule,
-    StoreModule.forFeature('event', reducers)
+    StoreModule.forFeature('event', reducers),
+    EffectsModule.forFeature(effects)
   ]
 })
 export class EventModule { }

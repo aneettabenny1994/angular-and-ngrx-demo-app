@@ -6,6 +6,8 @@ import { Store, select } from '@ngrx/store';
 import { State } from 'src/app/state/state';
 import { StartSpinner, StopSpinner } from '../../../state/spinner/spinner.actions';
 import { getSpinner } from '../../../state/spinner/spinner.selectors';
+import { LoadAttendees } from '../../../state/attendees/attendees.actions';
+import { getAttendees } from 'src/app/state/attendees/attendees.selectors';
 
 @Component({
   selector: 'app-event',
@@ -19,7 +21,9 @@ export class EventComponent implements OnInit {
   constructor(private store: Store<State>, private eventService: EventService) { }
 
   ngOnInit(): void {
-    this.getAttendees();
+    this.store.dispatch(new LoadAttendees());
+    this.attendees$ = this.store.pipe(select(getAttendees));
+    //this.getAttendees();
     this.spinner$ = this.store.pipe(select(getSpinner));
   }
 
