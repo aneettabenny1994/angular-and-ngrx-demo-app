@@ -7,6 +7,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { EventListComponent } from './components/event-list/event-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { StoreModule } from '@ngrx/store';
+import { reducers } from '../state';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
       { path: '', component: EventComponent }
     ]),
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    StoreModule.forFeature('event', reducers)
   ]
 })
 export class EventModule { }
